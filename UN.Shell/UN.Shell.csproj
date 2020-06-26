@@ -10,4 +10,15 @@
     <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UN.Cells\UN.Cells.csproj" />
+    <ProjectReference Include="..\UN.CORE\UN.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="unvell.ReoGrid">
+      <HintPath>..\..\..\..\.nuget\packages\unvell.reogridwpf.dll\2.2.0\lib\netcore\unvell.ReoGrid.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

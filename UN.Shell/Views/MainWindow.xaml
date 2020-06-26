@@ -1,0 +1,23 @@
+﻿<Window xmlns:Views="clr-namespace:UN.Shell.Views;assembly=UN.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:local="clr-namespace:UN.Shell.Views"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:region="clr-namespace:UN.Core.Constants;assembly=UN.Core"
+        xmlns:Views1="clr-namespace:UN.Cells.Views;assembly=UN.Cells"  x:Class="UN.Shell.Views.MainWindow"
+        prism:RegionManager.RegionManager="{Binding RegionMannager}"   
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Height="800" Width="800" Title="MainWindow">
+    <Grid>
+        <!--
+        <ContentControl x:Name="patientListRegion" Grid.Row="2" prism:RegionManager.RegionName="{x:Static region:RegionNames.PatientListRegion}" Margin="10"/>
+        -->
+
+        <Button  Height="50" Content="LoadingCommand" Margin="5" Command="{Binding LoadingCommand}"/>
+        <Views1:PaoGridBao HorizontalAlignment="Center" Height="134" Margin="0,130,0,0" VerticalAlignment="Top" Width="338"/>
+        <Views1:PaoGridBao HorizontalAlignment="Left" Height="100" Margin="90,197,0,0" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>

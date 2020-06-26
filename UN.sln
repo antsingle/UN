@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UN.Shell", "UN.Shell\UN.She
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UN.Cells", "UN.Cells\UN.Cells.csproj", "{699FF12E-73A0-4520-A4C9-A29915EFD01F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UN.CORE", "UN.CORE\UN.CORE.csproj", "{73A2E745-83E9-4E03-B9C5-6CB4042315D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UN.Core", "UN.CORE\UN.Core.csproj", "{73A2E745-83E9-4E03-B9C5-6CB4042315D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
