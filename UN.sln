@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UN.Shell", "UN.Shell\UN.Shell.csproj", "{73277BBD-FD00-49B8-9FFF-BCA1E2A02DA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UN.Cells", "UN.Cells\UN.Cells.csproj", "{699FF12E-73A0-4520-A4C9-A29915EFD01F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UN.CORE", "UN.CORE\UN.CORE.csproj", "{73A2E745-83E9-4E03-B9C5-6CB4042315D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73277BBD-FD00-49B8-9FFF-BCA1E2A02DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73277BBD-FD00-49B8-9FFF-BCA1E2A02DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73277BBD-FD00-49B8-9FFF-BCA1E2A02DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73277BBD-FD00-49B8-9FFF-BCA1E2A02DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699FF12E-73A0-4520-A4C9-A29915EFD01F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699FF12E-73A0-4520-A4C9-A29915EFD01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699FF12E-73A0-4520-A4C9-A29915EFD01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699FF12E-73A0-4520-A4C9-A29915EFD01F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A2E745-83E9-4E03-B9C5-6CB4042315D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A2E745-83E9-4E03-B9C5-6CB4042315D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A2E745-83E9-4E03-B9C5-6CB4042315D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A2E745-83E9-4E03-B9C5-6CB4042315D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8E77513-E2BD-4CCC-B444-27953C87EE30}
+	EndGlobalSection
+EndGlobal
