@@ -16,9 +16,15 @@
             <i:InvokeCommandAction Command="{Binding LoadingCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <Grid>
+    <StackPanel>
         <!--      -->
-        <ContentControl Height="200" x:Name="JieRegion" Grid.Row="2" prism:RegionManager.RegionName="{x:Static region:RegionNames.JieRegion}" Margin="10"/>
+        <ContentControl Height="200" x:Name="JieRegion" Grid.Row="1" prism:RegionManager.RegionName="{x:Static region:RegionNames.JieRegion}" Margin="10"/>
+
+
+        <Button  Height="50" Content="LoadCommand" Margin="5" Command="{Binding LoadCommand}"/>
+        
+        <ItemsControl  Height="200" x:Name="JieRegion2" Grid.Row="2" prism:RegionManager.RegionName="{x:Static region:RegionNames.JieRegion2}" Margin="10" ></ItemsControl>
+        
 
 
         <Button  Height="50" Content="LoadCommand" Margin="5" Command="{Binding LoadCommand}"/>
@@ -27,5 +33,5 @@
         <Views1:PaoGridBao HorizontalAlignment="Left" Height="100" Margin="90,197,0,0" VerticalAlignment="Top" Width="100"/>
         -->
      
-    </Grid>
+    </StackPanel>
 </Window>

@@ -38,10 +38,10 @@ namespace UN.Shell.ViewModels
 
             var _jieRegion = RegionMannager.Regions[RegionNames.JieRegion];
             _paoGridBaoView = CommonServiceLocator.ServiceLocator.Current.GetInstance<PaoGridBao>();
-           
-            //var _paoGridBaoView2 = CommonServiceLocator.ServiceLocator.Current.GetInstance<PaoGridBao>();
+            var _jieRegion2 = RegionMannager.Regions[RegionNames.JieRegion2];
+            var _paoGridBaoView2 = CommonServiceLocator.ServiceLocator.Current.GetInstance<PaoGridBao>();
             _jieRegion.Add(_paoGridBaoView);
-           // _jieRegion.Add(_paoGridBaoView2);
+            _jieRegion2.Add(_paoGridBaoView2);
             /*
            var uniformContentRegion = RegionMannager.Regions["UniformContentRegion"];
            var regionAdapterView1 = CommonServiceLocator.ServiceLocator.Current.GetInstance<RegionAdapterView1>();
