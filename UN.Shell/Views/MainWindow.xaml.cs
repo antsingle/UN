@@ -1,4 +1,5 @@
 ﻿using CommonServiceLocator;
+using Prism.Events;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Prism.Ioc;
 namespace UN.Shell.Views
 {
     /// <summary>
@@ -22,7 +23,7 @@ namespace UN.Shell.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(IContainerExtension containerProvider)
         {
             InitializeComponent();
            // var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();

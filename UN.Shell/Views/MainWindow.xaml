@@ -11,13 +11,21 @@
         prism:RegionManager.RegionManager="{Binding RegionMannager}"   
         prism:ViewModelLocator.AutoWireViewModel="True"
         Height="800" Width="800" Title="MainWindow">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadingCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <!--      -->
-        <ContentControl x:Name="JieRegion" Grid.Row="2" prism:RegionManager.RegionName="{x:Static region:RegionNames.JieRegion}" Margin="10"/>
-     
+        <ContentControl Height="200" x:Name="JieRegion" Grid.Row="2" prism:RegionManager.RegionName="{x:Static region:RegionNames.JieRegion}" Margin="10"/>
 
-        <Button  Height="50" Content="LoadingCommand" Margin="5" Command="{Binding LoadingCommand}"/>
-        <Views1:PaoGridBao HorizontalAlignment="Center" Height="134" Margin="0,130,0,0" VerticalAlignment="Top" Width="338"/>
+
+        <Button  Height="50" Content="LoadCommand" Margin="5" Command="{Binding LoadCommand}"/>
+        <!--
+           <Views1:PaoGridBao HorizontalAlignment="Center" Height="134" Margin="0,130,0,0" VerticalAlignment="Top" Width="338"/>
         <Views1:PaoGridBao HorizontalAlignment="Left" Height="100" Margin="90,197,0,0" VerticalAlignment="Top" Width="100"/>
+        -->
+     
     </Grid>
 </Window>
