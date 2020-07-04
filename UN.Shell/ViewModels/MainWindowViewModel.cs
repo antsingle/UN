@@ -28,7 +28,7 @@ namespace UN.Shell.ViewModels
 
         private void ExecuteLoadCommand()
         {
-            _ea.GetEvent<PaoGridLoadEvent>().Publish();
+            _ea.GetEvent<PaoGridLoadEvent>().Publish("");
             // private readonly IEventAggregator _ea;
         }
 

@@ -4,7 +4,7 @@ using System.Text;
 using Prism.Events;
 namespace UN.Core.Events
 {
-    public class PaoGridLoadEvent : PubSubEvent
+    public class PaoGridLoadEvent : PubSubEvent<String>
     {
 
     }
