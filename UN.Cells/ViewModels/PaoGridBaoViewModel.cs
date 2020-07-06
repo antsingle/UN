@@ -34,7 +34,15 @@ namespace UN.Cells.ViewModels
             _reoGrid = reoGridControl;
             var worksheet = reoGridControl.CurrentWorksheet;
             worksheet.SelectionForwardDirection = SelectionForwardDirection.Down;
+            
+            worksheet.ColumnHeaders["B"].DefaultCellBody = typeof(unvell.ReoGrid.CellTypes.ButtonCell);
+            worksheet[2, 1] = "22";
             worksheet[1, 1] = "fffff";
+
+
+
+
+
 
         }
         private void PaoGridLoadEReceived(string s)
@@ -42,7 +50,7 @@ namespace UN.Cells.ViewModels
             //ReoGrid.ent
             var worksheet = _reoGrid.CurrentWorksheet;
             worksheet.SelectionForwardDirection = SelectionForwardDirection.Down;
-
+          
             //worksheet.
             //worksheet.ctrl
             worksheet.SetRangeData("A1:Z4", DataBaseData.GetDataBaseData(this.SearchCondition));

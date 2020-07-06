@@ -39,7 +39,7 @@ namespace UN.Shell.ViewModels
             var _jieRegion = RegionMannager.Regions[RegionNames.JieRegion];
             _paoGridBaoView = CommonServiceLocator.ServiceLocator.Current.GetInstance<PaoGridBao>();
             var _jieRegion2 = RegionMannager.Regions[RegionNames.JieRegion2];
-            var _paoGridBaoView2 = CommonServiceLocator.ServiceLocator.Current.GetInstance<PaoGridBao>();
+            var _paoGridBaoView2 = CommonServiceLocator.ServiceLocator.Current.GetInstance<MeCell>();
             _jieRegion.Add(_paoGridBaoView);
             _jieRegion2.Add(_paoGridBaoView2);
             /*

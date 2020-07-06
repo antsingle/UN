@@ -33,9 +33,9 @@ namespace UN.Cells.Views
             _ea = containerProvider.Resolve<IEventAggregator>();
             //_ea = ea; ;
            // _ea.GetEvent<PaoGridLoadEvent>().Subscribe(PaoGridLoadEReceived);//订阅事件
-           // var btc= new  ButtonCell("fff\rffff\naaaa");
+            var btc= new  ButtonCell("fff\rffff");
            
-           // ReoGrid.CurrentWorksheet[1, 2] = btc;
+            ReoGrid.CurrentWorksheet[1, 2] = btc;
 
         }
         private void PaoGridLoadEReceived(string searchValue)
