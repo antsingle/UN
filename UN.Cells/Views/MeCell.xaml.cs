@@ -20,6 +20,10 @@ namespace UN.Cells.Views
         public MeCell()
         {
             InitializeComponent();
+            //list.Items.Add("ff");
+            //list.Items.Add("ff");
+
+            //list.Items.Add("ff");
         }
     }
 }

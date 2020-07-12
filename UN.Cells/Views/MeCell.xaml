@@ -12,6 +12,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="60"></ColumnDefinition>
@@ -21,6 +22,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock  Grid.Column="0"     Block.TextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center"  Text="当前Cell" ></TextBlock>
         <TextBlock  Grid.Column="1"   Block.TextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center"  Text="" ></TextBlock>
+        <ItemsControl x:Name="CmdList"   Grid.Row="1"></ItemsControl>
         <TextBox x:Name="CmdText" Text="{Binding Cmd}"  Grid.Column="2"  VerticalContentAlignment="Center" VerticalAlignment="Center"   Height="30">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="TextChanged">
@@ -28,8 +30,10 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <TextBox.InputBindings>
-                <!--键盘事件绑定-->
+                <!--键盘事件绑定
                 <KeyBinding Command="{Binding CommandEnter}"  CommandParameter="{Binding Cmd}" Key="Enter"/>
+                -->
+                <KeyBinding Command="{Binding ShowList}"  CommandParameter="{Binding ElementName=CmdList}" Key="Enter"/>
                 <!--鼠标事件绑定-->
                 <MouseBinding Command="{Binding ButtonClick}" MouseAction="LeftDoubleClick"/>
             </TextBox.InputBindings>
@@ -37,6 +41,7 @@
         <Button   Grid.Column="3"      Height="30">
             <TextBlock TextAlignment="Center" Text="确定"></TextBlock>
         </Button>
+       
     </Grid>
 
 </ContentControl>
