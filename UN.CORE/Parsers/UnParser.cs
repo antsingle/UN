@@ -6,8 +6,8 @@ namespace UN.Core.Parsers
 {
     public class UnParser
     {
-        private char[] _cmdTextCharArray;
-        //private int _cmdTextLens = 0;
+        private char[] _cmdList;
+        private int _cmdLens = 0;
         private int _pos = -1;
         private char _ch;
         private string _cmdText="";
@@ -15,13 +15,14 @@ namespace UN.Core.Parsers
         public UnParser(string cmdText)
         {
             _cmdText = cmdText;
-            _cmdTextCharArray = cmdText.ToCharArray();
+            _cmdList = cmdText.ToCharArray();
+            _cmdLens = _cmdList.Length;
         }
         private void NextChar()
         {
             _pos = _pos + 1;
-            if (_pos < _cmdTextCharArray.Length)
-                _ch = _cmdTextCharArray[_pos];
+            if (_pos < _cmdLens)
+                _ch = _cmdList[_pos];
             else
                 _ch = '\0';
         }
@@ -29,7 +30,7 @@ namespace UN.Core.Parsers
         {
             List<UnToken> TokenList = new List<UnToken>();
             NextChar();
-            while (_pos < _cmdTextCharArray.Length )
+            while (_pos < _cmdLens )
             {
                 var tk = NextToken();
                 TokenList.Add(tk);
@@ -45,6 +46,7 @@ namespace UN.Core.Parsers
             {
                 NextChar();
             }
+            if (_pos == _cmdLens) return ReturnToken(UnTokenId.Blank, _pos);
             s_pos = _pos;
             switch (_ch)
             {
@@ -71,17 +73,53 @@ namespace UN.Core.Parsers
                     if (_ch == '&') { tokenid = UnTokenId.Amp3; NextChar(); }
                     break;
                 case '"':
-                    tokenid = UnTokenId.Slash; NextChar();
+                case '\'':
+                    var ch = _ch;
+                    while ( _pos < _cmdLens)
+                    {
+                        NextChar();
+                        if (ch == _ch) break;
+                        if(_ch=='\\') NextChar();
+                        //if (_ch == ' ') NextChar();
+
+                    }
+                    if (_ch == ch)
+                    {
+                        tokenid = UnTokenId.TStringCell; 
+                        NextChar();
+                        if(_ch!=' ' && _pos < _cmdLens)
+                        {
+                            _pos = _cmdLens;
+                            return ReturnToken(UnTokenId.SyntaxError, s_pos);
+                        }  
+                            
+                    }
+                    else
+                    {
+                        tokenid = UnTokenId.SyntaxError; NextChar(); return ReturnToken(tokenid, s_pos);
+                    }
+                    
                     break;
                 default:
-                    while (_ch != '|' && _ch != '&' && _ch != ' ' && _ch != ':' && _pos < _cmdTextCharArray.Length) NextChar();
-                    tokenid = UnTokenId.LawStringCell;
+                    while (_ch != '|' && _ch != '&' && _ch != ' ' && _ch != ':' && _pos < _cmdLens)
+                    {
+                        NextChar();
+                    }
+                    tokenid = UnTokenId.FStringCell;
                     break;
 
             }
             var untoken = new UnToken();
             untoken.Id = tokenid;
             untoken.Text = _cmdText.Substring(s_pos, _pos - s_pos);
+            return untoken;
+        }
+        public UnToken ReturnToken(UnTokenId tokenid,int s_pos)
+        {
+            var pos = _pos < _cmdLens ? _pos : _cmdLens ;
+            var untoken = new UnToken();
+            untoken.Id = tokenid;
+            untoken.Text = _cmdText.Substring(s_pos, pos - s_pos);
             return untoken;
         }
     }
@@ -94,6 +132,8 @@ namespace UN.Core.Parsers
     public enum UnTokenId
     {
         UnKnown,
+        Blank,
+        SyntaxError,
         Dot,
         Sharp,
         Slash,
@@ -106,8 +146,8 @@ namespace UN.Core.Parsers
         Amp2,
         Amp3,
 
-        LawStringCell,
-        StringCell,
+        FStringCell,
+        TStringCell,
         VerbFunc
 
 

@@ -12,7 +12,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition ></RowDefinition>
-            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="500" ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="60"></ColumnDefinition>
@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock  Grid.Column="0"     Block.TextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center"  Text="当前Cell" ></TextBlock>
         <TextBlock  Grid.Column="1"   Block.TextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center"  Text="" ></TextBlock>
-        <ItemsControl x:Name="CmdList"   Grid.Row="1"></ItemsControl>
+        <ItemsControl x:Name="CmdList" Width="500"  Grid.Row="1"></ItemsControl>
         <TextBox x:Name="CmdText" Text="{Binding Cmd}"  Grid.Column="2"  VerticalContentAlignment="Center" VerticalAlignment="Center"   Height="30">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="TextChanged">

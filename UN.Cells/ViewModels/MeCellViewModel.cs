@@ -42,10 +42,11 @@ namespace UN.Cells.ViewModels
             ic.Items.Clear();
             for (int i=0;i< _tokens.Count;i++)
             {
-                ic.Items.Add(_tokens[i].Text);
+                ic.Items.Add(_tokens[i].Text + " " + _tokens[i].Id.ToString());
             }
-            var aaa=(new UnFilterParser()).ParserStart(_tokens);
-          //  MessageBox.Show("fff");
+          //  var aaa=(new UnFilterParser()).ParserStart(_tokens);
+
+            //MessageBox.Show("f\nff");
         }
 
         private DelegateCommand<object> _cmdTextChanged;
