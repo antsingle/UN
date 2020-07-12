@@ -39,8 +39,8 @@ namespace UN.Core.Parsers
         public UnToken NextToken()
         {
             int s_pos = 0;
-            UnTokenId tokenid=UnTokenId.UnKnown;
-           
+            UnTokenId tokenid = UnTokenId.UnKnown;
+
             while (_ch == ' ' || _ch == '\n')
             {
                 NextChar();
@@ -60,18 +60,28 @@ namespace UN.Core.Parsers
                 case ':':
                     tokenid = UnTokenId.Colon; NextChar();
                     break;
+                case '|':
+                    tokenid = UnTokenId.Bar1; NextChar();
+                    if (_ch == '|') { tokenid = UnTokenId.Bar2; NextChar(); }
+                    if (_ch == '|') { tokenid = UnTokenId.Bar3; NextChar(); }
+                    break;
+                case '&':
+                    tokenid = UnTokenId.Amp1; NextChar();
+                    if (_ch == '&') { tokenid = UnTokenId.Amp2; NextChar(); }
+                    if (_ch == '&') { tokenid = UnTokenId.Amp3; NextChar(); }
+                    break;
                 case '"':
                     tokenid = UnTokenId.Slash; NextChar();
                     break;
                 default:
-                    while (_ch != ' '&& _ch != ':' && _pos < _cmdTextCharArray.Length) NextChar();
+                    while (_ch != '|' && _ch != '&' && _ch != ' ' && _ch != ':' && _pos < _cmdTextCharArray.Length) NextChar();
                     tokenid = UnTokenId.LawStringCell;
                     break;
 
             }
             var untoken = new UnToken();
             untoken.Id = tokenid;
-            untoken.Text = _cmdText.Substring(s_pos, _pos - s_pos  );
+            untoken.Text = _cmdText.Substring(s_pos, _pos - s_pos);
             return untoken;
         }
     }

@@ -44,6 +44,7 @@ namespace UN.Cells.ViewModels
             {
                 ic.Items.Add(_tokens[i].Text);
             }
+            var aaa=(new UnFilterParser()).ParserStart(_tokens);
           //  MessageBox.Show("fff");
         }
 
