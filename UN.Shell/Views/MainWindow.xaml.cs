@@ -25,8 +25,15 @@ namespace UN.Shell.Views
     {
         public MainWindow(IContainerExtension containerProvider)
         {
-            InitializeComponent();
+           InitializeComponent();
            // var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+        }
+        public MainWindow(  string id)
+        {
+         
+            InitializeComponent();
+            MessageBox.Show(id);
+            // var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
         }
     }
 }

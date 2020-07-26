@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using UN.Core.DB;
 
 namespace UN.Core.Services
 {
@@ -32,7 +33,8 @@ namespace UN.Core.Services
                     //数据的内存中缓存
 
                     //将获取到的数据填充到数据缓存中
-                    sqlDataAda.Fill(dt);
+                   // sqlDataAda.Fill(dt);
+                    dt= SugarDb.GetDbInstance().Ado.GetDataTable(commandStr);
 
                 }
                 catch (Exception ex)

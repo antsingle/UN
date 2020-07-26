@@ -14,6 +14,12 @@ namespace UN.Cells.ViewModels
 {
     class MeCellViewModel : BindableBase
     {
+        private readonly IEventAggregator _ea;
+        public MeCellViewModel(IEventAggregator ea)
+        {
+            _ea = ea; ;
+           
+        }
         private List<UnToken> _tokens = new List<UnToken>();
         private string _cmd;
         public string Cmd
@@ -44,6 +50,7 @@ namespace UN.Cells.ViewModels
             {
                 ic.Items.Add(_tokens[i].Text + " " + _tokens[i].Id.ToString());
             }
+            _ea.GetEvent<PaoGridLoadEvent>().Publish("");
           //  var aaa=(new UnFilterParser()).ParserStart(_tokens);
 
             //MessageBox.Show("f\nff");

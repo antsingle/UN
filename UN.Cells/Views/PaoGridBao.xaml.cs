@@ -16,6 +16,7 @@ using UN.Core.Services;
 using Prism.Ioc;
 using unvell.ReoGrid;
 using unvell.ReoGrid.CellTypes;
+using UN.Cells.ViewModels;
 
 namespace UN.Cells.Views
 {
@@ -26,17 +27,25 @@ namespace UN.Cells.Views
     {
         private readonly IContainerExtension _containerProvider;
         private readonly IEventAggregator _ea;
+        public string tttt="fff";
         public PaoGridBao(IContainerExtension containerProvider)
         {
             InitializeComponent();
+            
             _containerProvider = containerProvider;
+            
             _ea = containerProvider.Resolve<IEventAggregator>();
+            //this.DataContext = new PaoGridBaoViewModel(_ea);
             //_ea = ea; ;
-           // _ea.GetEvent<PaoGridLoadEvent>().Subscribe(PaoGridLoadEReceived);//订阅事件
+            // _ea.GetEvent<PaoGridLoadEvent>().Subscribe(PaoGridLoadEReceived);//订阅事件
             var btc= new  ButtonCell("fff\rffff");
            
             ReoGrid.CurrentWorksheet[1, 2] = btc;
-
+           // this.SearchValue.Text = name;
+        }
+        public void Create(string name)
+        {
+            this.SearchValue.Text = name;
         }
         private void PaoGridLoadEReceived(string searchValue)
         {

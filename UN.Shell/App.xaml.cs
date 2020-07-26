@@ -23,7 +23,7 @@ namespace UN.Shell
 
         protected override Window CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            return Container.Resolve<MainWindow>("f");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

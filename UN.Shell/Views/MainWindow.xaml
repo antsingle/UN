@@ -18,7 +18,7 @@
     </i:Interaction.Triggers>
     <StackPanel>
         <!--      -->
-        <ContentControl Height="200" x:Name="JieRegion" Grid.Row="1" prism:RegionManager.RegionName="{x:Static region:RegionNames.JieRegion}" Margin="10"/>
+        <ItemsControl Height="500" x:Name="JieRegion" Grid.Row="1" prism:RegionManager.RegionName="{x:Static region:RegionNames.JieRegion}" Margin="10"/>
 
 
         <Button  Height="50" Content="LoadCommand" Margin="5" Command="{Binding LoadCommand}"/>

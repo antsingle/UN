@@ -1,0 +1,31 @@
+﻿<StackPanel x:Class="UN.Cells.Views.NameSlotCell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UN.Cells.Views"
+         xmlns:ReoGrid="clr-namespace:unvell.ReoGrid;assembly=unvell.ReoGrid" 
+            xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+            xmlns:prism="http://prismlibrary.com/"
+              prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+         Height="590" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Height="20" Orientation="Horizontal" >
+            <Button  Grid.Row="0" Width="50" Click="Button_Click" ></Button>
+            <Button  Grid.Row="0" Width="50" Click="Button_Click" ></Button>
+        </StackPanel>
+      
+        <ReoGrid:ReoGridControl  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="ReoGridM" Height="400"    >
+        </ReoGrid:ReoGridControl>
+        <Button HorizontalAlignment="Left"  Grid.Row="2" Height="20" Width="50" Click="Button_Click" ></Button>
+        <ReoGrid:ReoGridControl  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Name="ReoGridS"    Visibility="Hidden"   >
+        </ReoGrid:ReoGridControl>
+    </Grid>
+</StackPanel>
