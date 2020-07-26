@@ -12,19 +12,24 @@
          Height="590" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition  ></RowDefinition>
             <RowDefinition ></RowDefinition>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition  Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Height="20" Orientation="Horizontal" >
-            <Button  Grid.Row="0" Width="50" Click="Button_Click" ></Button>
-            <Button  Grid.Row="0" Width="50" Click="Button_Click" ></Button>
+        <StackPanel x:Name="Bt1" Height="20" Orientation="Horizontal" >
+            <Button  Grid.Row="0" Width="50"  Click="ShowHide_Click"  >展开</Button>
+            <Button  Grid.Row="0" Width="50"  >删除</Button>
+            <Button  Grid.Row="0" Width="50"  Click="Save_Click" >保存</Button>
+            <Button  Grid.Row="0" Width="50"  Click="Search_Click"  >刷新</Button>
         </StackPanel>
       
         <ReoGrid:ReoGridControl  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="ReoGridM" Height="400"    >
         </ReoGrid:ReoGridControl>
-        <Button HorizontalAlignment="Left"  Grid.Row="2" Height="20" Width="50" Click="Button_Click" ></Button>
+        <StackPanel x:Name="Bt2" Grid.Row="2" Height="20" Orientation="Horizontal"  Visibility="Hidden"  >
+            <Button     Height="20" Width="50" Click="ShowHide_Click" >隐藏</Button>
+            <Button     Height="20" Width="50" Click="Insert_Click" >新增</Button>
+        </StackPanel>
         <ReoGrid:ReoGridControl  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Name="ReoGridS"    Visibility="Hidden"   >
         </ReoGrid:ReoGridControl>
     </Grid>
